@@ -1,0 +1,60 @@
+
+<div class='container' ng-controller="brandProductController">
+
+<table class="table table-bordered">
+   <thead>
+  	<tr>
+    <th>TermIns</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tr>
+    <td>description</td>
+    <td>desc details</td>
+  </tr>
+  <tr>
+    <td>Features</td>
+    <td>Features details</td>
+  </tr>
+  <tr>
+    <td>Benefits</td>
+    <td>Benefits details</td>
+  </tr>
+  
+  <tr>
+    <td colspan="2">
+    
+    
+                <table class="table table-bordered">
+            <tr>
+              
+                <th>CountryName</th>
+                <th>Population</th>
+                <th>Operations</th>
+               
+            </tr>
+ 
+            <tr ng-repeat="item in brandDetailWithProductList | startFrom:currentPage*pageSize | limitTo:pageSize">
+               
+    <td> {{ item.countryName }}</td>
+    <td >{{ item.population }}</td>  
+                
+                <td><a ng-click="deleteCountry(country)" class="red-button">Request a Quote</a></td>
+            </tr>
+ 
+        </table>
+    
+    
+    <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+        Previous
+    </button>
+    {{currentPage+1}}/{{numberOfPages()}}
+    <button ng-disabled="currentPage >= data.length/pageSize - 1" ng-click="currentPage=currentPage+1">
+        Next
+    </button>
+  
+    </td>
+  </tr>
+</table>
+
+</div>

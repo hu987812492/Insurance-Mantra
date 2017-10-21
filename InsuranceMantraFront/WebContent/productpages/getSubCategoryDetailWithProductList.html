@@ -1,0 +1,52 @@
+
+<div class='container' ng-controller="subCategoryProductController">
+
+<table class="table table-bordered">
+   <thead>
+  	<tr>
+    <th>{{subCategory.subCategoryName}}</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tr>
+    <td>Description</td>
+    <td>{{subCategory.subCategoryDesc}}</td>
+  </tr>
+  <tr>
+    <td>Features</td>
+    <td>{{subCategory.subCategoryFeatures}}</td>
+  </tr>
+  <tr>
+    <td>Benefits</td>
+    <td>{{subCategory.subCategoryBenefits}}</td>
+  </tr>
+  
+  <tr>
+    <td colspan="2">
+   	<table class="table table-bordered">
+            <tr>
+              <th>Plan Name</th>
+                <th>Plan Maturity</th>
+                <th>Sum Assured</th>
+                 <th>Premium Amount</th>
+                 <th>Request Quote</th>
+            </tr>
+ 
+            <tr ng-repeat="plan in subCategoryWithPlans" >
+               
+		    <td> <a href="#/planDescription/{{plan.planId}}">{{ plan.planName }} </a></td>
+		    <td >{{ plan.planMaturity }}</td>  
+             <td> {{ plan.sumAssured }}</td>
+		    <td >{{ plan.premiumAmount }}</td>  
+		        
+     		<td><a href="#/requestQuote/{{plan.brandId}}/{{plan.planId}}" class="red-button">Request a Quote</a></td>
+            </tr>
+ 
+        </table>
+    
+     
+    </td>
+  </tr>
+</table>
+
+</div>

@@ -1,0 +1,37 @@
+<div class='container' ng-controller="subCategoryController">
+ 
+<table class="table table-bordered" >
+  <thead>
+  <tr>
+    <th>{{subCat.categoryName}}</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tr>
+    <td colspan="1">Description</td>
+    <td colspan="5"> {{subCat.categoryDesc}}
+    
+    
+     </td>
+  </tr>
+  <tr>
+    <td colspan="6">
+    
+    <table>
+    <tr ng-repeat="subcatname in subCat.subCategoryList">
+    <td>
+    
+    <p> <a href="#/subCategoryListDetail/{{subcatname}}">{{subcatname.subCategoryName}} </a></p>
+    
+    </td>
+    
+    </tr>
+    </table>
+    
+    </td>
+  </tr>
+</table>
+
+</div>
+
+ 

@@ -1,0 +1,141 @@
+
+<div class="container">
+    <div class="row profile"  ng-controller ="adminProfileController">
+		<div class="col-md-3">
+			<div class="profile-sidebar">
+				<!-- END SIDEBAR USERPIC -->
+				<!-- SIDEBAR USER TITLE -->
+				<div class="profile-usertitle">
+					<div class="profile-usertitle-name">
+						Jyoti Sharma
+					</div>
+					<div class="profile-usertitle-job">
+						Admin
+					</div>
+				</div>
+				<!-- END SIDEBAR USER TITLE -->
+				<!-- SIDEBAR BUTTONS -->
+				<div class="profile-userbuttons">
+					<button type="button" class="btn btn-success btn-sm">Follow</button>
+					<button type="button" class="btn btn-danger btn-sm">Message</button>
+				</div>
+				<!-- END SIDEBAR BUTTONS -->
+				<!-- SIDEBAR MENU -->
+				<div class="profile-usermenu">
+					<ul class="nav">
+						<li>
+							<a ng-click="displayPage('adminDashboard')">
+							<i class="glyphicon glyphicon-home"></i>
+							Dashboard </a>
+						</li>							
+
+						<li>
+							<a ng-click="displayPage('createCategory')">
+							<i class="glyphicon glyphicon-ok"></i>
+							Create Category </a>
+						</li>
+						
+						<li>
+							<a ng-click="displayPage('sellerOrderHistory')">
+							<i class="glyphicon glyphicon-ok"></i>
+							Update Category </a>
+						</li>
+						
+						<li>
+							<a ng-click="displayPage('sellerOrderHistory')">
+							<i class="glyphicon glyphicon-ok"></i>
+							Delete Category </a>
+						</li>
+						
+						
+						<li>
+							<a ng-click="displayPage('sellerOrderHistory')">
+							<i class="glyphicon glyphicon-ok"></i>
+							Create Sub Category History </a>
+						</li>
+						
+						<li>
+							<a ng-click="displayPage('sellerOrderHistory')">
+							<i class="glyphicon glyphicon-ok"></i>
+							Update Sub Category History </a>
+						</li>						
+
+						<li>
+							<a ng-click="displayPage('sellerOrderHistory')">
+							<i class="glyphicon glyphicon-ok"></i>
+							Delete Sub Category History </a>
+						</li>	
+																	
+						<li>
+							<a ng-click="displayPage('sellerOrderHistory')">
+							<i class="glyphicon glyphicon-ok"></i>
+							Update History </a>
+						</li>
+						
+												
+						<li>
+							<a ng-click="displayPage('sellerOrderHistory')">
+							<i class="glyphicon glyphicon-ok"></i>
+							Delete History </a>
+						</li>
+						
+												
+						<li>
+							<a ng-click="displayPage('sellerOrderHistory')">
+							<i class="glyphicon glyphicon-ok"></i>
+							View Seller </a>
+						</li>
+						
+					
+						<li>
+							<a ng-click="displayPage('sellerAddProduct')">
+							<i class="glyphicon glyphicon-ok"></i>
+							Add Product</a>
+						</li>
+						
+						
+						<li>
+							<a ng-click="displayPage('sellerProductUpdate')">
+							<i class="glyphicon glyphicon-ok"></i>
+							Update Product</a>
+						</li>
+						
+						<li>
+							<a ng-click="displayPage('sellerProductDelete')">
+							<i class="glyphicon glyphicon-ok"></i>
+							Delete Product</a>
+						</li>
+						
+						<li>
+							<a ng-click="displayPage('sellerProductList')">
+							<i class="glyphicon glyphicon-ok"></i>
+							Product List</a>
+						</li>
+						
+						<li>
+							<a ng-click="displayPage('sellerPasswordReset')">
+							<i class="glyphicon glyphicon-flag"></i>
+							Help </a>
+						</li>
+					</ul>
+				</div>
+				<!-- END MENU -->
+			</div>
+		</div>
+		<div class="col-md-9">
+            <div class="profile-content">
+            <div  ng-if="gotopage=='default'" ng-include="'adminpages/adminDashbord.html'"></div>
+            <div  ng-if="gotopage=='adminDashboard'" ng-include="'adminpages/adminDashbord.html'"></div>
+   			 <div  ng-if="gotopage=='createCategory'" ng-include="'adminpages/createCategory.html'"></div>
+   			 <div  ng-if="gotopage=='sellerOrderHistory'" ng-include="'adminpages/sellerOrderHistory.html'"></div>
+   			 <div  ng-if="gotopage=='sellerAddProduct'" ng-include="'adminpages/addProduct.html'"></div>
+   			 <div  ng-if="gotopage=='sellerProductList'" ng-include="'adminpages/sellerProductList.html'"></div>
+   			 <div  ng-if="gotopage=='sellerProductUpdate'" ng-include="'adminpages/sellerProductUpdate.html'"></div>
+   			 <div  ng-if="gotopage=='sellerProductDelete'" ng-include="'adminpages/sellerProductDelete.html'"></div>
+   			 <div  ng-if="gotopage=='sellerPasswordReset'" ng-include="'adminpages/sellerChangePassword.html'"></div>
+    
+
+            </div>
+		</div>
+	</div>
+</div>

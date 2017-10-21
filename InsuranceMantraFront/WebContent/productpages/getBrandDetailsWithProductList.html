@@ -1,0 +1,41 @@
+
+<div class='container' ng-controller="brandProductController">
+
+<table class="table table-bordered">
+   <thead>
+  	<tr>
+	
+    <th>{{brandDisplayName}}</th>
+    <th></th>
+  </tr>
+  </thead>  
+  <tr>
+    <td colspan="2">
+    
+       	<table class="table table-bordered">
+            <tr>
+              <th>Plan Name</th>
+                <th>Plan Maturity</th>
+                <th>Sum Assured</th>
+                 <th>Premium Amount</th>
+                 <th>Request Quote</th>
+            </tr>
+ 
+            <tr ng-repeat="brandPlanDetail in brandProductDataList" >
+               
+		    <td> <a href="#/planDescription/{{brandPlanDetail.planId}}">{{brandPlanDetail.planName}} </a></td>
+		    <td >{{brandPlanDetail.planMaturity}}</td>  
+             <td> {{brandPlanDetail.sumAssured}}</td>
+		    <td >{{brandPlanDetail.premiumAmount}}</td>  
+		        
+     		<td><a href="#/requestQuote/{{brandPlanDetail.brandId}}/{{brandPlanDetail.planId}}" class="red-button" ">Request a Quote</a></td>
+            </tr>
+ 
+        </table>
+    
+    
+    </td>
+  </tr>
+</table>
+
+</div>

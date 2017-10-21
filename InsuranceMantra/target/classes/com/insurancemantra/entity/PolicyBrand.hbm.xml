@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 3, 2016 12:09:10 AM by Hibernate Tools 5.1.0.Alpha1 -->
+<hibernate-mapping>
+    <class name="com.insurancemantra.entity.PolicyBrand" table="policy_brand" catalog="insurance_mantra" optimistic-lock="version">
+        <id name="brandId" type="java.lang.Integer">
+            <column name="brand_id" />
+            <generator class="identity" />
+        </id>
+        <property name="brandName" type="string">
+            <column name="brand_name" length="50" not-null="true" />
+        </property>
+        <property name="creationDate" type="date">
+            <column name="creation_date" length="10" />
+        </property>
+        <property name="brandEmail" type="string">
+            <column name="brand_email" length="100" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="2000" not-null="true" />
+        </property>
+        <property name="brandAddress" type="string">
+            <column name="brand_address" length="200" />
+        </property>
+        <property name="brandCity" type="string">
+            <column name="brand_city" length="50" />
+        </property>
+        <property name="brandState" type="string">
+            <column name="brand_state" length="20" />
+        </property>
+        <property name="brandCountry" type="string">
+            <column name="brand_country" length="20" />
+        </property>
+        <property name="brandPhone" type="java.lang.Integer">
+            <column name="brand_phone" />
+        </property>
+        <property name="brandStatus" type="string">
+            <column name="brand_status" length="15" />
+        </property>
+        <set name="policyOrderHistories" table="policy_order_history" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="brand_id" not-null="true" />
+            </key>
+            <one-to-many class="com.insurancemantra.entity.PolicyOrderHistory" />
+        </set>
+        <set name="policyPlans" table="policy_plan" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="brand_id" not-null="true" />
+            </key>
+            <one-to-many class="com.insurancemantra.entity.PolicyPlan" />
+        </set>
+    </class>
+</hibernate-mapping>

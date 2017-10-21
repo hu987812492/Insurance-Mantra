@@ -1,0 +1,30 @@
+<div ng-controller="ListProductController" >
+    
+            <table>
+            <tr>
+              
+                <th>CountryName</th>
+                <th>Population</th>
+                <th>Operations</th>
+               
+            </tr>
+ 
+            <tr ng-repeat="item in data | startFrom:currentPage*pageSize | limitTo:pageSize">
+               
+    <td> {{ item.countryName }}</td>
+    <td >{{ item.population }}</td>  
+                
+                <td><a ng-click="deleteCountry(country)" class="red-button">Request a Quote</a></td>
+            </tr>
+ 
+        </table>
+    
+    
+    <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+        Previous
+    </button>
+    {{currentPage+1}}/{{numberOfPages()}}
+    <button ng-disabled="currentPage >= data.length/pageSize - 1" ng-click="currentPage=currentPage+1">
+        Next
+    </button>
+</div>

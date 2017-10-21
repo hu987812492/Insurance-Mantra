@@ -1,0 +1,75 @@
+
+<div class='container' ng-controller="subCategoryProductController">
+
+<table class="table table-bordered">
+   <thead>
+  	<tr>
+    <th>{{subCategory.subCategoryName}}</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tr>
+    <td>description</td>
+    <td>{{subCategory.subCategoryDesc}}</td>
+  </tr>
+  <tr>
+    <td>Features</td>
+    <td>{{subCategory.subCategoryFeatures}}</td>
+  </tr>
+  <tr>
+    <td>Benefits</td>
+    <td>{{subCategory.subCategoryBenefits}}</td>
+  </tr>
+  
+  <tr>
+    <td colspan="2">
+   	<table class="table table-bordered">
+            <tr>
+              <th>Plan Name</th>
+                <th>Plan Maturity</th>
+                <th>Sum Assured</th>
+                 <th>Premium Amount</th>
+                 <th>Request Quote</th>
+            </tr>
+ 
+            <tr ng-repeat="plan in subCategoryWithPlans | startFrom:currentPage*pageSize | limitTo:pageSize">
+               
+		    <td> <a href="#/planDescription/{{plan.planId}}">{{ plan.planName }} </a></td>
+		    <td >{{ plan.planMaturity }}</td>  
+             <td> {{ plan.sumAssured }}</td>
+		    <td >{{ plan.premiumAmount }}</td>  
+		        
+     		<td><a href="#/requestQuote" class="red-button">Request a Quote</a></td>
+            </tr>
+ 
+        </table>
+    
+    
+    <button ng-disabled="currentPage == 0" ng-click="currentPage=currentPage-1">
+        Previous
+    </button>
+    {{currentPage+1}}/{{numberOfPages()}}
+    <button ng-disabled="currentPage >= data.length/pageSize - 1" ng-click="currentPage=currentPage+1">
+        Next
+    </button>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    </td>
+  </tr>
+</table>
+
+</div>

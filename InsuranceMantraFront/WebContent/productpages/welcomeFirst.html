@@ -1,0 +1,51 @@
+
+    <!-- Page Content -->
+    <div class="container" ng-controller ="topPolicyController">
+
+        <!-- Heading Row -->
+        <div class="row">
+            <div class="col-md-8">
+                <img class="img-responsive img-rounded" src="./image/Insured.png" alt="InsuranceMantra">
+            </div>
+            <!-- /.col-md-8 -->
+            <div class="col-md-4">
+                <h3>{{topPolicyBrand.brandName}} is the best Selling Brand</h3>
+                <p> We define best selling brand based on the product sold and customer satisfaction</p>
+                <a class="btn btn-primary btn-lg"  href="#/brandList/{{topPolicyBrand.brandName}}/{{topPolicyBrand.brandId}}">Look For Products!</a>
+            </div>
+            <!-- /.col-md-4 -->
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Call to Action Well -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="well text-center">
+                    <h2>Best Selling Insurance Policies !</h2>
+                </div>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+
+        <!-- Content Row -->
+        
+        
+               <div class="row" >
+            <div class="col-md-4" ng-repeat="toppolicy in topPolicyList">
+                <h3>{{toppolicy.planName}}</h3>
+                <p>{{toppolicy.planDesc}}</p>
+                <a class="btn btn-default" href="#/planDescription/{{toppolicy.planId}}">Click For More Info</a>
+            </div>
+            
+        </div>
+        <!-- /.row -->
+
+        <!-- Footer -->
+		<hr>
+		<hr>
+    </div>
+    <!-- /.container -->
+

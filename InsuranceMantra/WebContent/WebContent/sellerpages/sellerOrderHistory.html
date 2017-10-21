@@ -1,0 +1,24 @@
+<table class="table">
+  <tr>
+    <th colspan="2"> Order History</th>
+    <th colspan="10"></th>
+  </tr>
+	<tr>
+	<td >orderId</td>
+    <td >requesterName</td>
+    <td >requesterEmail</td>
+    <td >requesterPhone</td>
+    <td >orderStatus</td>
+    <td>orderCreationDate</td>
+    <td>orderCompletionDate</td>
+   </tr>
+  <tr ng-repeat="order in  sellerOrderDetailList">
+    <td >{{order.orderId}}</td>
+    <td >{{order.requesterName}}</td>
+    <td >{{order.requesterEmail}}</td>
+    <td >{{order.requesterPhone}}</td>
+    <td >{{order.orderStatus}}</td>
+    <td >{{order.orderCreationDate}}</td>
+    <td >{{order.orderCompletionDate}}</td>
+  </tr>
+</table>

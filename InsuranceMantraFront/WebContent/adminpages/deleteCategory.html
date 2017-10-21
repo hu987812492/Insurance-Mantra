@@ -1,0 +1,26 @@
+<table class="table">
+  <tr>
+    <th colspan="4"> Policy Categories</th>
+    <th colspan="10"></th>
+  </tr>
+	<tr>
+	
+	<td >Category ID</td>
+	<td>Category Name</td>
+    <td >Category Description</td>
+    <td>Creation Date</td>
+   </tr>
+ 
+  <tr ng-repeat="category in  categoryList">
+    <td >{{category.categoryId}}</td>
+    <td>{{category.categoryName}}</td>
+    <td >{{category.creationDate}}</td>
+    <td>{{category.categoryDesc}}</td>
+     
+    <td >     
+    <button class='btn btn-primary' ng-click="adminDeleteCategory(category.categoryId)"
+							type='submit'>Delete</button>
+    </td>
+    
+  </tr>
+</table>

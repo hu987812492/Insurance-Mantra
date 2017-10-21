@@ -1,0 +1,32 @@
+<table class="table">
+  <tr>
+    <th colspan="4"> Your Policy Plans</th>
+    <th colspan="10"></th>
+  </tr>
+	<tr>
+	<td >Plan Id</td>
+    <td >Sub-Category</td>
+    <td >Plan Name</td>
+    <td >Minimum Entry Age</td>
+    <td >Max Entry Age</td>
+    <td>Plan Maturity</td>
+    <td>Premium Amount</td>
+    <td>Sum Assured</td>
+   </tr>
+ 
+  <tr ng-repeat="plan in  sellerProductList">
+    <td >{{plan.planId}}</td>
+    <td >{{plan.subCategoryId}}</td>
+    <td>{{plan.planName}}</td>
+    <td >{{plan.minEntryAge}}</td>
+    <td >{{plan.maxEntryAge}}</td>
+    <td >{{plan.planMaturity}}</td>
+    <td >{{plan.premiumAmount}}</td>
+    <td >{{plan.sumAssured}}</td>
+    <td >     
+    <button class='btn btn-primary' ng-click="sellerDeletePlan(plan.planId)"
+							type='submit'>Delete</button>
+    </td>
+    
+  </tr>
+</table>

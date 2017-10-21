@@ -1,0 +1,43 @@
+<table class="table">
+  <tr>
+    <th colspan="4"> Policy Brands</th>
+    <th colspan="10"></th>
+  </tr>
+	<tr>
+	
+	<td >Brand Id</td>
+	<td>Brand Name</td>
+    <td >Creation Date</td>
+    <td>Brand Email</td>
+    <td >Brand Address</td>
+    <td >Brand City</td>
+    <td >Brand State</td>
+    <td>Brand Country</td>
+    <td>Brand Contact</td>
+    <td>Brand Status</td>
+   </tr>
+ 
+  <tr ng-repeat="brand in  adminBrandList">
+    <td >{{brand.brandId}}</td>
+    <td>{{brand.brandName}}</td>
+    <td >{{brand.creationDate}}</td>
+    <td>{{brand.brandEmail}}</td>
+    <td >{{brand.brandAddress}}</td>
+    <td >{{brand.brandCity}}</td>
+    <td >{{brand.brandState}}</td>
+    <td >{{brand.brandCountry}}</td>
+    <td>{{brand.brandPhone}}</td>
+     
+     <td > <div ng-if="'Pending' == brand.brandStatus"> 
+    
+    <button class='btn btn-primary' ng-click="adminActivateSeller(brand.brandId, 'Active')"
+							type='submit'>ACTIVATE SELLER</button>
+    </div>
+	<div ng-if="'Active' == brand.brandStatus">
+	    <button class='class="btn btn-danger"' ng-click="adminActivateSeller(brand.brandId, 'Pending')"
+							type='submit'>DISABLE SELLER</button>
+	</div>
+    </td>
+    
+  </tr>
+</table>

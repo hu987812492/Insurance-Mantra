@@ -1,0 +1,67 @@
+<div class="container" ng-controller="requestQuoteController">
+	<div class="row">
+		<form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Request Quote</legend>
+
+<form name="requestQuote">
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Current Fleet Size">Requester Name</label>  
+  <div class="col-md-5">
+  <input name="requesterName"   ng-model="requestQuote.requesterName" type="text" placeholder="Name" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Annual Forklift Purchases">Requester Email</label>  
+  <div class="col-md-5">
+  <input name="email"   ng-model="requestQuote.requesterEmail"type="text" placeholder="email" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Select Multiple -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Area of Interest">Requester Phone </label>
+  <div class="col-md-5">
+    <input name="phone"   ng-model="requestQuote.requesterPhone" type="text" placeholder="Phone" class="form-control input-md">
+   
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Decision Timeframe">Requester DoB</label>
+  <div class="col-md-5">
+  <input name="dob"   ng-model="requestQuote.requesterDob" type="text" placeholder="DOB" class="form-control input-md">
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Message">Requester Salary</label>  
+  <div class="col-md-5">
+  <input name="salary"   ng-model="requestQuote.requesterIncome" type="text" placeholder="Salary" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton">Submit</label>
+  <div class="col-md-4">
+  <input type="button"   name ="submitQuote" value="Request Quote" class="btn btn-primary"  ng-click="submitQuote()">
+    
+  </div>
+</div>
+
+</fieldset>
+</form>
+
+	</div>
+</div>

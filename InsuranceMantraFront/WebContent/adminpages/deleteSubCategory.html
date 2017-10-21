@@ -1,0 +1,24 @@
+<table class="table">
+  <tr>
+    <th colspan="4"> Policy Sub-Categories</th>
+    <th colspan="10"></th>
+  </tr>
+	<tr>
+	
+	<td >Sub-Category ID</td>
+	<td>Sub-Category Name</td>
+    <td >Action</td>
+        
+   </tr>
+ 
+  <tr ng-repeat="subCategory in  subCategoryList">
+    <td >{{subCategory.subCategoryId}}</td>
+    <td>{{subCategory.subCategoryName}}</td>
+     
+    <td >     
+    <button class='btn btn-primary' ng-click="adminDeleteSubcate(subCategory.subCategoryId)"
+							type='submit'>Delete</button>
+    </td>
+    
+  </tr>
+</table>

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 3, 2016 12:09:10 AM by Hibernate Tools 5.1.0.Alpha1 -->
+<hibernate-mapping>
+    <class name="com.insurancemantra.entity.PolicyUser" table="policy_user" catalog="insurance_mantra" optimistic-lock="version">
+        <id name="userId" type="java.lang.Integer">
+            <column name="user_id" />
+            <generator class="identity" />
+        </id>
+        <property name="userName" type="string">
+            <column name="user_name" length="50" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="2000" not-null="true" />
+        </property>
+        <property name="userEmail" type="string">
+            <column name="user_email" length="100" />
+        </property>
+        <property name="userRole" type="string">
+            <column name="user_role" length="15" />
+        </property>
+        <property name="userDob" type="date">
+            <column name="user_dob" length="10" />
+        </property>
+        <property name="userAddress" type="string">
+            <column name="user_address" length="200" />
+        </property>
+        <property name="userCity" type="string">
+            <column name="user_city" length="50" />
+        </property>
+        <property name="userState" type="string">
+            <column name="user_state" length="20" />
+        </property>
+        <property name="userCountry" type="string">
+            <column name="user_country" length="20" />
+        </property>
+        <property name="userPhone" type="java.lang.Integer">
+            <column name="user_phone" />
+        </property>
+        <property name="creationDate" type="date">
+            <column name="creation_date" length="10" />
+        </property>
+        <property name="name" type="string">
+            <column name="name" length="50" not-null="true" />
+        </property>
+        <set name="policyOrderHistories" table="policy_order_history" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="user_id" not-null="true" />
+            </key>
+            <one-to-many class="com.insurancemantra.entity.PolicyOrderHistory" />
+        </set>
+    </class>
+</hibernate-mapping>

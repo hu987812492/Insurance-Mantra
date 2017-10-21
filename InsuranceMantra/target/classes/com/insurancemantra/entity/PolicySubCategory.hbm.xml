@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 3, 2016 12:09:10 AM by Hibernate Tools 5.1.0.Alpha1 -->
+<hibernate-mapping>
+    <class name="com.insurancemantra.entity.PolicySubCategory" table="policy_sub_category" catalog="insurance_mantra" optimistic-lock="version">
+        <id name="subCategoryId" type="java.lang.Integer">
+            <column name="sub_category_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="policyCategory" class="com.insurancemantra.entity.PolicyCategory" fetch="select">
+            <column name="category_id" not-null="true" />
+        </many-to-one>
+        <property name="subCategoryName" type="string">
+            <column name="sub_category_name" length="50" not-null="true" />
+        </property>
+        <property name="creationDate" type="date">
+            <column name="creation_date" length="10" />
+        </property>
+        <property name="subCategoryDesc" type="string">
+            <column name="sub_category_desc" length="1000" />
+        </property>
+        <property name="subCategoryFeatures" type="string">
+            <column name="sub_category_features" length="1000" />
+        </property>
+        <property name="subCategoryBenefits" type="string">
+            <column name="sub_category_benefits" length="1000" />
+        </property>
+        <set name="policyPlans" table="policy_plan" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="sub_category_id" not-null="true" />
+            </key>
+            <one-to-many class="com.insurancemantra.entity.PolicyPlan" />
+        </set>
+    </class>
+</hibernate-mapping>

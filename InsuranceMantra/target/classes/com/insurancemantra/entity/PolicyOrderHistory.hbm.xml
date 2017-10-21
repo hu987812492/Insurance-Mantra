@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 3, 2016 12:09:10 AM by Hibernate Tools 5.1.0.Alpha1 -->
+<hibernate-mapping>
+    <class name="com.insurancemantra.entity.PolicyOrderHistory" table="policy_order_history" catalog="insurance_mantra" optimistic-lock="version">
+        <id name="orderId" type="java.lang.Long">
+            <column name="order_id" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="policyBrand" class="com.insurancemantra.entity.PolicyBrand" fetch="select">
+            <column name="brand_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="policyPlan" class="com.insurancemantra.entity.PolicyPlan" fetch="select">
+            <column name="plan_id" not-null="true" />
+        </many-to-one>
+        <many-to-one name="policyUser" class="com.insurancemantra.entity.PolicyUser" fetch="select">
+            <column name="user_id" not-null="true" />
+        </many-to-one>
+        <property name="requesterName" type="string">
+            <column name="requester_name" length="50" not-null="true" />
+        </property>
+        <property name="requesterEmail" type="string">
+            <column name="requester_email" length="100" />
+        </property>
+        <property name="requesterPhone" type="int">
+            <column name="requester_phone" not-null="true" />
+        </property>
+        <property name="requesterDob" type="date">
+            <column name="requester_dob" length="10" />
+        </property>
+        <property name="requesterIncome" type="string">
+            <column name="requester_income" length="20" />
+        </property>
+        <property name="orderStatus" type="string">
+            <column name="order_status" length="10" />
+        </property>
+        <property name="orderCreationDate" type="date">
+            <column name="order_creation_date" length="10" />
+        </property>
+        <property name="orderCompletionDate" type="date">
+            <column name="order_completion_date" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

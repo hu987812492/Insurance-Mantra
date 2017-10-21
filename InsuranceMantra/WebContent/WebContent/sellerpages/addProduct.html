@@ -1,0 +1,108 @@
+<form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Policy Plan</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="subCategory">Sub-Category</label>  
+  <div class="col-md-4">
+  <input id="subCategory" name="subCategory" placeholder="Sub-Category" class="form-control input-md" required="" type="text">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="product_name">PRODUCT NAME</label>  
+  <div class="col-md-4">
+  <input id="product_name" name="product_name" placeholder="PRODUCT NAME" class="form-control input-md" required="" type="text">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="product_name_fr">PRODUCT DESCRIPTION FR</label>  
+  <div class="col-md-4">
+  <select ng-model="selectedCategory">
+   <option ng-repeat="subCategory in subCategorytList" value="{{subCategory.categoryId}}">{{subCategory.categoryName}}</option>
+</select>    
+  </div>
+</div>
+
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="product_categorie">PRODUCT CATEGORY</label>
+  <div class="col-md-4">    
+    <select id="product_categorie" name="product_categorie"   class="form-control" size="10" ng-model ="selectedSucCat">                                
+    <option ng:repeat="sub in allsubCategories" value="{{sub.subCatId}}">
+        {{sub.name}}
+    </option>
+</select>
+    
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="available_quantity">AVAILABLE QUANTITY</label>  
+  <div class="col-md-4">
+  <input id="available_quantity" name="available_quantity" placeholder="AVAILABLE QUANTITY" class="form-control input-md" required="" type="text">
+    
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="product_weight">PRODUCT WEIGHT</label>  
+  <div class="col-md-4">
+  <input id="product_weight" name="product_weight" placeholder="PRODUCT WEIGHT" class="form-control input-md" required="" type="text">
+    
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="product_description">Plan Description</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" name="planDescription" ng-model="policyPlan.planDesc"></textarea>
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="product_name_fr">Plan features</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" name="planFeatures" ng-model="policyPlan.planFeatures"></textarea>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="Message">Plan features</label>  
+  <div class="col-md-5">
+  <input name="planFeatures"   ng-model="policyPlan.planFeatures" type="text" placeholder="Features" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="singlebutton">Add Policy Plan</label>
+  <div class="col-md-4">
+    <input type="button" name="addPolicy" value="Add Policy" class="btn btn-primary" ng-click="addPlan()">
+  </div>
+  </div>
+
+</fieldset>
+</form>

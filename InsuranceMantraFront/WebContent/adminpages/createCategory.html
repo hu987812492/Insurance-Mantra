@@ -1,0 +1,32 @@
+<form class="form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend>Add Category</legend>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="categoryName">Category Name</label>  
+  <div class="col-md-4">
+  <input ng-model="categoryDetail.categoryName" name="categoryName" placeholder="Category Name" class="form-control input-md" required type="text">
+    
+  </div>
+</div>
+
+<!-- Textarea -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="categoryDesc">Category Description</label>
+  <div class="col-md-4">                     
+    <textarea class="form-control" name="categoryDesc" required ng-model="categoryDetail.categoryDesc"></textarea>
+  </div>
+</div>
+
+<!-- Button -->
+<div class="form-group">
+  <div class="col-md-4">
+    <input type="submit" name="addCategory" value="Add Category" class="btn btn-primary" ng-click="createCategory()">
+  </div>
+  </div>
+
+</fieldset>
+</form>

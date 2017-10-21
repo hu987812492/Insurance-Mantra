@@ -1,0 +1,73 @@
+<div class="container"  ng-controller="planDescriptionController">
+	<div class="row product-detail-2">
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="wrapper">
+                
+                <div class="row">
+                    <h1>{{planDetail.planName}}</h1>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 text-left">
+                        <div class="product-price">
+                            <span>Premium Amount : </span> {{planDetail.premiumAmount}}
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 text-right">
+                    
+                        <button type="button" class="btn btn-lg btn-success btn-lg">
+                        <a href="#/requestQuote" >Request a Quote</a>
+                        </button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="wrapper">
+                <div class="row">
+                    
+                    <div class="col-lg-9">
+                        <h2>Seller Name : {{planDetail.policyBrand}} </h2>
+                        <div class="vendor-rating">
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                                <span class="fa fa-star"></span>
+                        </div>
+                        
+                        
+                        <div class="vendor-last-login">
+                            Plan Id : {{planDetail.planId}}
+                        </div>
+                        
+                        <div class="vendor-feedback">
+                           Minimum Entry Age : {{planDetail.minEntryAge}} </br>
+                           Maximum Entry Age : {{planDetail.maxEntryAge}} </br>
+                           Plan Maturity     : {{planDetail.planMaturity}}
+                        </div>
+                         <div class="vendor-reject">
+                          Total Sum Assured : {{planDetail.sumAssured}}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12"> 
+                        <h3>Brand Name</h3>
+                        <div class="product-stock">
+                           {{planDetail.policyBrand}}
+                        </div>
+                        <h3>Featues</h3>
+                        <div class="product-specifications">
+                           {{planDetail.planFeatures}}
+                        </div>
+                        <h3>Descriptions</h3>
+                        <div class="product-descriptions">
+                        	{{planDetail.planDesc}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</div>
+</div>

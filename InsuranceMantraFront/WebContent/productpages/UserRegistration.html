@@ -1,0 +1,181 @@
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css">
+
+<div class="container">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">
+                  Registration </h4>
+            </div>
+            <div class="modal-body" >
+                <div class="row">
+                    <div class="col-md-8" style="border-right: 1px dotted #C2C2C2;padding-right: 30px;">
+                   
+                        <div class="tab-content">
+                            <div class="tab-pane active" >
+		<form class='form-horizontal' role='form'>
+				<div class="form-group">
+
+					<div ng-show="regCtrl.error" align="center"
+						class="col-sm-offset-2 col-sm-2 alert alert-danger">{{regCtrl.message}}</div>
+
+				</div>
+				<div class='form-group'>
+					<label class='control-label col-md-2 col-md-offset-2'
+						for='id_title'>Name</label>
+					<div class='col-md-8'>
+						
+						<div class='col-md-8 indent-small'>
+							<div class='form-group internal'>
+								<input class='form-control' id='id_first_name' placeholder='name'
+									ng-model="regCtrl.registration.name" type='text' required>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				<div class='form-group'>
+					<label class='control-label col-md-2 col-md-offset-2'
+						for='id_email'>Username</label>
+					<div class='col-md-6'>
+						<div class='form-group'>
+							<div class='col-md-11'>
+								<input class='form-control' id='id_username'
+									placeholder='Username' ng-model="regCtrl.registration.userName"
+									type='text' required>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class='form-group'>
+					<label class='control-label col-md-2 col-md-offset-2'
+						for='id_email'>Password</label>
+					<div class='col-md-6'>
+						<div class='form-group'>
+							<div class='col-md-11'>
+								<input class='form-control' id='id_password'
+									placeholder='Password' ng-model="regCtrl.registration.password"
+									type='password' required>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class='form-group'>
+					<label class='control-label col-md-2 col-md-offset-2'
+						for='id_email'>Contact</label>
+					<div class='col-md-6'>
+						<div class='form-group'>
+							<div class='col-md-11'>
+								<input class='form-control' id='id_email'  Placeholde='Email'
+									ng-model="regCtrl.registration.userEmail" type='email' required>
+							</div>
+						</div>
+						
+					</div>
+				</div>
+				<div class='form-group'>
+					<label class='control-label col-md-2 col-md-offset-2'
+						for='id_email'>Date of Birth</label>
+					<div class='col-md-6'>
+						<div class='form-group'>
+							<div class='col-md-11'>
+								<p class="input-group">
+									<input type="text" required class="form-control"
+										uib-datepicker-popup="{{regCtrl.dobOptions.format}}"
+										ng-model="regCtrl.registration.userDob"
+										is-open="regCtrl.dobOptions.popup"
+										datepicker-options="regCtrl.dateOptions" ng-required="true"
+										close-text="Close"
+										alt-input-formats="regCtrl.dobOptions.altInputFormats" /> <span
+										class="input-group-btn">
+										<button type="button" class="btn btn-default"
+											ng-click="regCtrl.open()">
+											<i class="glyphicon glyphicon-calendar"></i>
+										</button>
+									</span>
+
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				<div class='form-group'>
+					<label class='control-label col-md-2 col-md-offset-2'
+						for='id_email'>User Address</label>
+					<div class='col-md-6'>
+						<div class='form-group'>
+							<div class='col-md-11'>
+								<input class='form-control' id='id_username'
+									ng-model="regCtrl.registration.userAddress"
+									type='text'>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			<div class='form-group'>
+					<label class='control-label col-md-2 col-md-offset-2'
+						for='id_email'>User City</label>
+					<div class='col-md-6'>
+						<div class='form-group'>
+							<div class='col-md-11'>
+								<input class='form-control' id='id_username'
+									 ng-model="regCtrl.registration.userCity"
+									type='text'>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<div class='form-group'>
+					<label class='control-label col-md-2 col-md-offset-2'
+						for='id_email'>User State</label>
+					<div class='col-md-6'>
+						<div class='form-group'>
+							<div class='col-md-11'>
+								<input class='form-control' id='id_username'
+									ng-model="regCtrl.registration.userState"
+									type='text'>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+
+			<div class='form-group'>
+					<label class='control-label col-md-2 col-md-offset-2'
+						for='id_email'>User Country</label>
+					<div class='col-md-6'>
+						<div class='form-group'>
+							<div class='col-md-11'>
+								<input class='form-control' id='id_username'
+									ng-model="regCtrl.registration.userCountry"
+									type='text'>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+
+				<div class='form-group'>
+					<div class='col-md-offset-4 col-md-3'>
+						<button class='btn btn-primary' ng-click="regCtrl.register()"
+							type='submit'>Register</button>
+					</div>
+					<div class='col-md-3'>
+						<button class='btn btn-danger' ng-click="regCtrl.cancel()"
+							style='float: right' type='submit'>Cancel</button>
+					</div>
+				</div>
+			</form>
+         </div>
+
+             </div>
+         </div>
+                    <div class="col-md-4">
+                        
+                    </div>
+                </div>
+            </div>

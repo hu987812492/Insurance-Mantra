@@ -1,0 +1,30 @@
+<table class="table">
+  <tr>
+    <th colspan="2"> Order History</th>
+    <th colspan="10"></th>
+  </tr>
+	<tr>
+	<td >ID</td>
+    <td >REQ NAME</td>
+    <td >REQ EMAIL</td>
+    <td>REQ PHONE</td>
+    <td >STATUS</td>
+    <td>ORDER DATE</td>
+    <td>COMPLETE DATE</td>
+   </tr>
+  <tr ng-repeat="order in  sellerOrderDetailList">
+    <td >{{order.orderId}}</td>
+    <td >{{order.requesterName}}</td>
+    <td >{{order.requesterEmail}}</td>
+    <td >{{order.requesterPhone}}</td>
+    <td > <div ng-if="'created' == order.orderStatus"> 
+    
+    <button class='btn btn-primary' ng-click="updateOrderStatusBasedOnId(order.orderId)"
+							type='submit'>{{order.orderStatus}}</button>
+    </div>
+	<div ng-if="'Completed' == order.orderStatus"> {{order.orderStatus}}</div>
+    </td>
+    <td >{{order.orderCreationDate}}</td>
+    <td >{{order.orderCompletionDate}}</td>
+  </tr>
+</table>
